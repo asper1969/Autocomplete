@@ -1,0 +1,21 @@
+<?php
+
+    function field_product_autocomplete_menu() {
+        $items = array();
+
+        $items['node/autocomplete'] = array(
+            'title' => 'Node autocomplete',
+            'page callback' => 'node_autocomplete',
+            'access callback' => 'user_access',
+            'access arguments' => array('access content'),
+            'type' => MENU_CALLBACK,
+        );
+
+        return $items;
+    }
+
+    function node_autocomplete($string = '') {
+        $matches = taxonomy_get_tree(9);
+
+        drupal_json_output($matches);
+    }

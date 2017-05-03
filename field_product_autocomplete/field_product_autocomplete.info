@@ -1,0 +1,8 @@
+name = Field product autocomplete
+description = Enables Drupal core AJAX autocomplete widget for a Webform textfield.
+
+core = 7.x
+package = Webform
+dependencies[] = webform
+
+files[] = field_product_autocomplete.module
